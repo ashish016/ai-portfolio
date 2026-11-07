@@ -29,7 +29,7 @@ export function About() {
           </Reveal>
           <Reveal delay={0.1} className="mt-8 flex flex-col gap-5 text-[17px] leading-relaxed text-muted">
             <p>
-              I work with European and US product teams on Java and Spring Boot — microservices, event-driven systems, identity and access, and the CI/CD pipelines that get changes into production without surprises. I prefer short feedback loops, real content, and shipping before the release becomes a big event.
+              I work work with European and US product teams on Java and Spring Boot — microservices, event-driven systems, identity and access, and the CI/CD pipelines that get changes into production without surprises. I prefer short feedback loops, real content, and shipping before the release becomes a big event.
             </p>
             <p>
               I usually work asynchronously across a shared timezone, with a standing weekly review, written architecture notes, and a code review that actually teaches. I reach out early when something is fragile or when a simpler design would unblock the rest of the team.
