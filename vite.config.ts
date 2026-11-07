@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 // import historyApiFallback from 'vite-plugin-history-api-fallback'
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS === 'true' ? '/ai-portfolio/' : '/',
+  base: '/',
   plugins: [
     react(),
     tailwindcss(),
