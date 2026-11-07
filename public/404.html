@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ashish Dash</title>
+    <meta name="description" content="Java & Spring Boot engineer building backend systems for European and US clients." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #f2efe9; color: #2b2b2b; }
+      a { color: #1a56db; }
+    </style>
+  </head>
+  <body>
+    <script>
+      // GitHub Pages serves /404.html for unknown routes. Load the
+      // actual app so client-side routes (e.g. /work/aurora)
+      // render instead of showing a 404 page.
+      var loc = window.location;
+      var dir = loc.pathname.replace(/\/[^\/]+$/, '') || '/';
+      var root = loc.origin + dir;
+      var app = document.createElement('div');
+      app.id = 'root';
+      document.body.appendChild(app);
+      var s = document.createElement('script');
+      s.type = 'module';
+      s.crossOrigin = 'anonymous';
+      // Resolve the built JS filename from the served index.html
+      var fit = fetch(root + 'index.html')
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var m = html.match(/src="([^"]+\.js)"/);
+          if (!m) throw new Error('no script found');
+          return root + m[1];
+        });
+      s.src = 'data:text/javascript;base64,' + btoa('(async function(){try{const src=await fetchIndex();var e=document.createElement("script");e.type="module";e.crossOrigin="anonymous";e.src=src;document.head.appendChild(e);}catch(err){console.error(err);}})();');
+      document.head.appendChild(s);
+    </script>
+  </body>
+</html>
