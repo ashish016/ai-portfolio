@@ -1,6 +1,6 @@
 // Strips files the Sites uploader refuses (hidden files and source maps)
 // from the build output, so `deploy.json` can point straight at dist/.
-import { readdirSync, rmSync, statSync } from 'node:fs'
+import { copyFileSync, readdirSync, rmSync, statSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -19,3 +19,4 @@ function clean(dir) {
 }
 
 clean(join(root, '../dist'))
+copyFileSync(join(root, '../dist/client/index.html'), join(root, '../dist/client/404.html'))

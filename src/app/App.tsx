@@ -52,7 +52,7 @@ function Pages() {
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
       <Preloader />
       <SkipLink />
       <ScrollManager />
