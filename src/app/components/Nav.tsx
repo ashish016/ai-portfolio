@@ -43,16 +43,14 @@ export function Nav() {
 
   return (
     <header className={cx('fixed inset-x-0 top-0 z-40 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]', hidden && '-translate-y-full')}>
-      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between bg-bg/90 px-4 backdrop-blur-md sm:px-8">
         <Link to="/" className="text-[15px] font-medium">
           {site.name}
         </Link>
-        <nav className="flex items-center gap-6">
-          {link('/#work', 'Work')}
+        <nav className="flex items-center gap-3 sm:gap-6">
+          {link('/work', 'Work')}
           {link('/about', 'About')}
-          <a href={`mailto:${site.email}`} className="link-draw text-[14px] text-muted transition-colors hover:text-fg">
-            Contact
-          </a>
+          {link('/contact', 'Contact')}
           <span className="hidden text-[13px] tabular-nums text-faint sm:inline">
             {site.location} {time}
           </span>

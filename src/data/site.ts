@@ -18,6 +18,8 @@ export const site = {
   marquee: ['Java & Spring Boot', 'Backend engineering', 'Event-driven architecture', 'Cloud-native platforms', 'CI/CD & DevOps', 'Technical mentoring'],
 }
 
+export const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export interface Project {
   slug: string
   title: string
@@ -41,7 +43,7 @@ export const projects: Project[] = [
     client: 'European fintech',
     category: 'Spring Boot platform',
     year: '2024–now',
-    cover: '/images/payment-core.jpg',
+    cover: assetPath('images/payment-core.jpg'),
     tint: '#f5efe6',
     summary: 'A risk and settlement platform processing card, bank transfer and wallet payments for a European fintech, built for scale and auditability.',
     role: ['Java & Spring Boot', 'Architecture', 'Event-driven design'],
@@ -59,7 +61,7 @@ export const projects: Project[] = [
     client: 'US SaaS startup',
     category: 'Scalable backend service',
     year: '2023–24',
-    cover: '/images/notification-service.jpg',
+    cover: assetPath('images/notification-service.jpg'),
     tint: '#eaf1f8',
     summary: 'A multi-tenant notification service that moved a US SaaS company from synchronous email spikes to a durable, rate-limited delivery pipeline.',
     role: ['Java & Spring Boot', 'Scaling', 'Observability'],
@@ -76,7 +78,7 @@ export const projects: Project[] = [
     client: 'US e-commerce brand',
     category: 'High-throughput REST API',
     year: '2022–23',
-    cover: '/images/inventory-api.jpg',
+    cover: assetPath('images/inventory-api.jpg'),
     tint: '#e8f0ec',
     summary: 'A low-latency inventory API that cut stock-outs and reservation failures for a US e-commerce brand during peak retail periods.',
     role: ['Java & Spring Boot', 'Performance', 'Data access'],
@@ -93,7 +95,7 @@ export const projects: Project[] = [
     client: 'European digital agency',
     category: 'Edge & gateway engineering',
     year: '2021–22',
-    cover: '/images/api-gateway.jpg',
+    cover: assetPath('images/api-gateway.jpg'),
     tint: '#f0eaf3',
     summary: 'An API gateway and developer portal that gave a European agency stable access to a fragmented set of legacy and cloud services.',
     role: ['Spring Boot', 'API design', 'Integration'],
@@ -111,7 +113,7 @@ export const projects: Project[] = [
     client: 'US payments company',
     category: 'Multi-provider payments',
     year: '2022–23',
-    cover: '/images/payments-aggregator.jpg',
+    cover: assetPath('images/payments-aggregator.jpg'),
     tint: '#24304a',
     summary: 'A multi-provider payments aggregator that lets a US payments company switch between processors without changing the merchant onboarding flow.',
     role: ['Java & Spring Boot', 'Provider abstraction', 'Domain modelling'],
@@ -128,7 +130,7 @@ export const projects: Project[] = [
     client: 'European health startup',
     category: 'Identity and access',
     year: '2023–24',
-    cover: '/images/auth-service.jpg',
+    cover: assetPath('images/auth-service.jpg'),
     tint: '#f7f4ec',
     summary: 'An identity bridge that connects a European health startup\'s app to corporate IdPs and device enrollment, so clinicians can sign in securely during on-call shifts.',
     role: ['Java & Spring Boot', 'Security', 'Plugin architecture'],
@@ -181,7 +183,5 @@ export const testimonials = [
 ]
 
 export const experience = [
-  { period: '2021 to now', title: 'Backend engineer (Europe & US)', detail: 'Java, Spring Boot and event-driven systems for fintech and SaaS companies.' },
-  { period: '2018 to 2021', title: 'Platform engineer', detail: 'CI/CD, Docker and cloud infrastructure for a digital agency\'s client teams.' },
-  { period: '2015 to 2018', title: 'Java developer', detail: 'REST APIs, batch processing and database optimisation for financial products.' },
+  { period: '2021 to now', title: 'Backend engineer (Europe & US)', detail: 'Professional journey building Java and Spring Boot systems for fintech and SaaS teams.' },
 ]

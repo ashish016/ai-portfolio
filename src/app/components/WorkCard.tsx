@@ -48,12 +48,10 @@ export function WorkCard({ project, index = 0 }: { project: Project; index?: num
             View project
           </motion.span>
         </div>
-        <div className="mt-4 flex items-baseline justify-between gap-4">
-          <h3 className="font-display text-[28px] sm:text-[32px]">{project.title}</h3>
-          <p className="shrink-0 text-[13.5px] text-muted">
-            {project.category}
-            <span className="ml-3 tabular-nums text-faint">{project.year}</span>
-          </p>
+        <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] items-baseline gap-x-4">
+          <h3 className="min-w-0 break-words font-display text-[28px] sm:text-[32px]">{project.title}</h3>
+          <span className="whitespace-nowrap text-right text-[13px] tabular-nums text-faint">{project.year}</span>
+          <p className="col-start-1 mt-1 min-w-0 text-[13.5px] leading-snug text-muted">{project.category}</p>
         </div>
       </Link>
     </motion.div>
