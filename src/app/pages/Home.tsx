@@ -1,8 +1,9 @@
 import { ArrowUpRight, Globe, MessageSquare, LayoutList } from 'lucide-react'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
+import { Link } from 'react-router'
 
-import { projects, services, site, testimonials } from '../../data/site'
+import { assetPath, projects, services, site, testimonials } from '../../data/site'
 import { Lines, Magnetic, Parallax, Reveal } from '../components/motion'
 import { WorkCard } from '../components/WorkCard'
 import { cx } from '../lib/cx'
@@ -70,7 +71,7 @@ export function Home() {
       <section className="mx-auto max-w-[1400px] px-5 pt-32 sm:px-8 sm:pt-44">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           <Reveal>
-            <Parallax src="/images/portrait.jpg" alt={site.name} className="aspect-[4/5] max-w-[420px] rounded-image" strength={6} />
+            <Parallax src={assetPath('images/portrait.jpg')} alt={site.name} className="aspect-[4/5] max-w-[420px] rounded-image" strength={6} />
           </Reveal>
           <div className="flex flex-col justify-center">
             <Lines
@@ -87,10 +88,10 @@ export function Home() {
               </p>
             </Reveal>
             <Reveal delay={0.3} className="mt-8">
-              <a href="#contact" className="group inline-flex items-center gap-1.5 text-[15px] font-medium text-fg">
+              <Link to="/contact" className="group inline-flex items-center gap-1.5 text-[15px] font-medium text-fg">
                 Work with me
                 <ArrowUpRight className="size-4 transition-transform duration-700 group-hover:translate-y-0.5" />
-              </a>
+              </Link>
             </Reveal>
           </div>
         </div>

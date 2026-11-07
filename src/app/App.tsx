@@ -8,10 +8,15 @@ import { Preloader } from './components/Preloader'
 import { About } from './pages/About'
 import { Home } from './pages/Home'
 import { Work } from './pages/Work'
+import { WorkIndex } from './pages/WorkIndex'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
+    if (pathname === '/contact') {
+      window.setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 50)
+      return
+    }
     if (hash) {
       const target = document.querySelector(hash)
       if (target) {
@@ -41,6 +46,8 @@ function Pages() {
       >
         <Routes location={location}>
           <Route index element={<Home />} />
+          <Route path="contact" element={<Home />} />
+          <Route path="work" element={<WorkIndex />} />
           <Route path="work/:slug" element={<Work />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<Navigate to="/" replace />} />
